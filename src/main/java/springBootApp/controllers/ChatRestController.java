@@ -36,11 +36,11 @@ public class ChatRestController {
         Chat chat = new Chat();
         return"<body>"+
                 "<h1>Create Message</h1>"+
-                "<form action= '/chat/send?message=['']' method ='GET'>"+
+                "<form action= '/chats/send?message=['']' method ='GET'>"+
                 "<input type ='text' name= 'message' value='' />"+
                 "<input type='submit'>"+
                 "</form>"+
-                "<a href='/chat/send'> view all messages</a>"+
+                "<a href='/chats/send'> view all messages</a>"+
                  "</body>";
 
 
@@ -64,7 +64,7 @@ public class ChatRestController {
             chatDAO.save(chat);
             return "Message send successfully.";
         } catch (Exception e) {
-            return "Error sending chat message: " + e.toString();
+            return "Error sending chats message: " + e.toString();
         }
     }
 

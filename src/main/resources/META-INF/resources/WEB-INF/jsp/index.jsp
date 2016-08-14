@@ -8,9 +8,9 @@
 <br><br>
     <a href="/jspTest">Go to Secure JSP</a>
     <br><br>
-<a href="/chat/createMessage">Go to REST Chat</a>    <br><br>
+<a href="/chat/help">Go to REST Chat</a>    <br><br>
     <a href="/logout">SIGN OUT</a> <br>
 
-<a href="/jspchat">create new chat </a>
+<a href="/chats/addChat">create new chat </a>
 </body>
 </html>

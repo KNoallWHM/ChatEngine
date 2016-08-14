@@ -25,15 +25,15 @@ public class JspController {
     }
 
     @RequestMapping(value ="/jspchat")
-    public String jspChat() {return "chat/chat";}
+    public String jspChat() {return "chats/chats";}
 
 
-    @RequestMapping(value = "addChat")
+    @RequestMapping(value = "/addChat")
     public String addChat() {
-        return "chat/addChat";
+        return "chats/addChat";
     }
 
-    @RequestMapping(value = "saveChat")
+    @RequestMapping(value = "/saveChat")
     public View saveChat(String message) {
         Chat chat = new Chat();
         chat.setMessage(message);
@@ -41,14 +41,15 @@ public class JspController {
         chat.setSender(auth.getName());
         chat.setWhenSent(new Timestamp(System.currentTimeMillis()));
         chatDAO.save(chat);
-        return new RedirectView("viewChats");
+        return new RedirectView("/viewChats");
     }
 
-    @RequestMapping(value = "viewChats")
+
+    @RequestMapping(value = "/viewChats")
     public String viewChats(ModelMap model) {
         model.addAttribute("chats", chatDAO.findAll());
 
-        return "chat/viewAllChats";
+        return "chats/viewAllChats";
 
     }
 }
